@@ -12,19 +12,23 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+header{
+    background-color: antiquewhite;
+    color: #000000;
+}
 
 .logo-titulo {
     display: inline-block; 
 }
 
 .logo-titulo img {
-    width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
-    vertical-align: middle; /* Alinea verticalmente la imagen */
-    margin-right: 10px; /* Añade un margen entre la imagen y el título */
+    width: 100px; 
+    vertical-align: middle; 
+    margin-right: 10px; 
 }
 
 .titulo {
-    display: inline-block; /* Asegura que el título sea un bloque en línea */
+    display: inline-block;
 }
 
 nav.navbar-custom {
@@ -40,7 +44,7 @@ nav.navbar-custom {
 }
 
 .header-content h2 {
-    color: rgb(255, 255, 255); /* Cambiar el color del título */
+    color: rgb(255, 255, 255);
 }
 
 .header-content p {
@@ -135,28 +139,37 @@ nav.navbar-custom {
     font-size: 18px;
 }
 
-h3{
+h3 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    font-size: 2em;
 }
 
-
-.PreguntasAcordeon{
-    margin: 100px auto;
-    width:600px ;
-    margin-top: 50px;
+.preguntas-container {
+    background: url("/img/fondo.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 50px 20px;
 }
 
-.PreguntasAcordeon li{
+.PreguntasAcordeon {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.PreguntasAcordeon li {
     list-style: none;
-    width: 100%;
     margin-bottom: 10px;
     background-color: rgb(240, 217, 175);
     padding: 10px;
     border-radius: 4px;
 }
 
-.PreguntasAcordeon li label{
+.PreguntasAcordeon li label {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -164,20 +177,20 @@ h3{
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    color:rgb(0, 0, 0);
+    color: #000;
 }
 
-.PreguntasAcordeon li label span{
+.PreguntasAcordeon li label span {
     transform: rotate(90deg);
     font-size: 22px;
     color: #323337;
 }
 
-.PreguntasAcordeon label + input[type="radio"]{
+.PreguntasAcordeon label + input[type="radio"] {
     display: none;
 }
 
-.PreguntasAcordeon li .content{
+.PreguntasAcordeon li .content {
     padding: 0 10px;
     line-height: 26px;
     max-height: 0;
@@ -185,8 +198,63 @@ h3{
     transition: max-height 0.5s;
 }
 
-.PreguntasAcordeon label + input[type="radio"]:checked + .content{
+.PreguntasAcordeon label + input[type="radio"]:checked + .content {
     max-height: 400px;
+}
+
+@media (max-width: 600px) {
+    .PreguntasAcordeon {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .PreguntasAcordeon li label {
+        font-size: 16px;
+    }
+
+    .PreguntasAcordeon li .content {
+        font-size: 14px;
+    }
+}
+
+/*ACA VAN LOS MAPAS*/
+
+.map-container {
+    display: flex;
+    gap: 20px; /* Espacio entre los mapas */
+    padding: 20px;
+    background: #694817;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container h4 {
+    color: white;
+    text-align: center;
+}
+
+.map-wrapper {
+    flex: 1; /* Para que ocupen el mismo ancho */
+}
+
+iframe {
+    width: 100%;
+    height: 150px; /* Reducir la altura */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .map-container {
+        flex-direction: column; /* Cambiar a columna para dispositivos pequeños */
+        align-items: center;
+    }
+
+    .map-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 footer {
@@ -197,11 +265,76 @@ footer {
     width: 100%;
 }
 
-.logo-footer img {
-    width: 150px;
-    height: 150px;
-    float: left;
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Para distribuir columnas equitativamente */
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas más pequeñas */
 }
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px; /* Para asegurar que las columnas no sean demasiado estrechas */
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column form label,
+.footer-column form input,
+.footer-column form button {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.footer-column form input {
+    padding: 8px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño del input */
+}
+
+.footer-column form button {
+    padding: 8px;
+    background-color: #694817;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-column form button:hover {
+    background-color: #563d29;
+}
+
+.footer-rights {
+    margin-top: 20px; 
+    border-top: 1px solid #000000; 
+    padding-top: 10px;
+}
+
+.footer-rights p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
 
 @media screen and (max-width: 768px) {
     .docente-container {
