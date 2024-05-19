@@ -92,20 +92,24 @@ nav.navbar-custom {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px; /* Agrega espacio entre elementos */
+    gap: 20px; /* Añadido espacio entre elementos */
 }
 
 .docente {
-    flex-basis: calc(33.33% - 20px); 
+    flex-basis: calc(33.33% - 20px);
     overflow: hidden;
     border: 1px solid #ccc;
-    transition: transform 0.3s ease; /* para hacer una transformacion suave */
-    box-sizing: border-box; 
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f9f9f9; /* Asegurarse de que el fondo sea consistente */
 }
 
 @media screen and (max-width: 768px) {
     .docente {
-        flex-basis: calc(50% - 20px); 
+        flex-basis: calc(50% - 20px);
     }
 }
 
@@ -116,22 +120,19 @@ nav.navbar-custom {
 }
 
 .docente:hover {
-    transform: scale(1.05); /* Expande ligeramente el contenedor al hacer hover */
+    transform: scale(1.05);
 }
 
 .docente img {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
-}
-
-.docente:hover img {
-    transform: scale(1.1);
+    vertical-align: middle; /* Asegurarse de que la imagen esté alineada al medio */
 }
 
 .docente-info {
     padding: 20px;
-    background-color: #f9f9f9;
+    flex-grow: 1; /* Permitir que crezca para llenar el espacio */
 }
 
 .docente-info h3 {
@@ -145,6 +146,11 @@ nav.navbar-custom {
     font-size: 18px;
 }
 
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
 
 
 /*pregntas frecuentes*/
